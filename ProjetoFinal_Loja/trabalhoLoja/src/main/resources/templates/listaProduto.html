@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/tabelas.css}">
+    <link rel="stylesheet" th:href="@{/css/listaProduto.css}">
+    
+    <title>Lista Produto</title>
+</head>
+
+<body class="listaProdutos">
+    <div class="fundo">
+        <header>
+            <nav>
+                <ul><a href="/home">Home</a></ul>
+                <ul><a href="/cliente/getAll">Clientes</a></ul>
+                <ul><a href="/produto/getAll">Produtos</a></ul>
+                <ul><a href="/pedido/getAll">Consultar Pedidos</a></ul>
+                <ul><a href="/categoria/getAll">Categorias</a></ul>
+                <ul><a href="/pedido/add">Gerar pedido</a></ul>
+            </nav>
+        </header>
+    
+        <main>
+            <section class="produtos" th:each="produto : ${produto}">
+                <div>
+                    <div class="caixaImagem"><img class="imgproduto" th:src="@{'/img/0'+${produto.id_produto}+'.png'}" alt="Imagem do produto">
+                    </div>
+                    <div class="caixaTexto">
+                        <h2 th:text="${produto.nome}"></h2>
+                        <p th:text="${produto.descricao}"></p>
+                        <p>Preço de venda: R$<span th:text="${produto.preco_venda}"></span></p>
+                        <p>Preço de compra: R$<span th:text="${produto.preco_compra}"></span></p>
+                        <p>Estoque: <span th:text="${produto.quantidade}"></span></p>
+                        <p>Categoria: <span th:text="${produto.categoria.nome}"></span></p>
+                        <span class="acoes">
+                            <a class="edit" th:href="@{'/produto/getById?id=' + ${produto.id_produto}}"></a>
+                            <a class="delete" th:href="@{'/produto/delete?id=' + ${produto.id_produto}}"></a>
+                        </span>
+                    </div>
+                </div>
+            </section>
+    
+            <a href="/produto/add"><span class="inserir"></span></a>
+        </main>
+    </div>
+    <footer>
+        <div>
+         <h1>Contatos</h1>
+         <p>34 9 91234 5678</p>
+         <p>admin@dominio.com</p>
+        </div>
+        <div>
+            <img id="logo" th:src="@{/img/1.png}" width="100px" alt="">
+            <p id="direitos">Nenhum direito reservado</p>
+        </div>
+        <div>
+            <form action="">
+                <label for="InscrevaSe">Inscreva -se:</label>
+                <br>
+                <input type="text" name="InscrevaSe" placeholder="Seu E-mail">
+                <input id="enviar" type="button" value="✔️">
+            </form>
+            <p>Siga-nos:</p>
+            <img id="instagram" th:src="@{/img/instagram.png}" alt="">
+            <img id="facebook" th:src="@{/img/facebook.png}" alt="">
+            <img id="twitter" th:src="@{/img/twitter.png}" alt="">
+            <img id="youtube" th:src="@{/img/youtube.png}" alt="">
+            
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+
+
+table, tr, th, td {
+    margin: 0;
+}
+
+.criarPedido {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid white;
+}
+
+.pedidoInfo {
+    display: flex;
+    align-items: center;        
+    justify-content: center;
+    flex-direction: column;
+    width: 20%;
+    gap: 30px;
+    background-color: rgba(52, 58, 63, 0.3);
+    color: white;
+    
+}
+
+.tabelaPedido {
+    width: 80%;
+    border-left: 1px solid white;
+}
+
+select {
+    font-size: 20px;
+    cursor: pointer;
+
+}
+table {
+    width: 100%;
+}
+button {
+    display: block;
+    text-align: center;
+}
+
+.caixaBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+input[type="number"] {
+    padding: 5px;
+    font-size: 16px;
+    width: 100px;
+    background-color: rgb(163, 161, 161);
+    color: black;
+}
+
+.valorTotal {
+    color: rgb(102, 236, 87);
+}
+
+.precoTotal {
+    margin-bottom: 20px;
+}

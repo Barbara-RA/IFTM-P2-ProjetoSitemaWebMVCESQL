@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link id="estiloAtual" rel="stylesheet" th:href="@{/css/layoutOriginal.css}"> -->
+    <link rel="stylesheet" href="css/layoutOriginal.css">
+    <link rel="stylesheet" href="css/jAlertWifi.css">
+    <title>Cadastro</title>
+</head>
+<body id="cadastro">
+    <div class="cadastro-container">
+        <img src="img/1.png" width="125px" alt="">
+        <h2>Cadastro</h2>
+        <form>
+            <input type="text" id="txtUser" name="usuario" required placeholder="Nome e Sobrenome">
+            <input type="email" id="email" required placeholder="E-mail">
+            <input type="password" id="txtPwd" name="senha" required placeholder="Senha">
+            <input type="password" id="txtCheckPwd" name="confirmaSenha" required placeholder="Confirmar Senha">
+            <label for="endereco"><img src="img/endereco.png" width="15px" whalt="">Endereço</label>
+            <input type="text" name="endereco" id="endereco" required placeholder="Rua/Av. - Bairro - Número - Complemento">
+            <label for="telefone"><img src="img/Whatsapp.png" width="18px" alt="">Whatsapp</label>
+            <input type="tel" name="telefone" required placeholder="(00)0 0000 0000">
+
+            <button type="button" id="btnCadastrar">Cadastrar</button>
+        </form>
+
+        <p><a href="login.html" class="signup-link">Faça login</a></p>
+    </div>
+    <script src="js/jAlertWifi.js"></script>
+</body>
+</html>

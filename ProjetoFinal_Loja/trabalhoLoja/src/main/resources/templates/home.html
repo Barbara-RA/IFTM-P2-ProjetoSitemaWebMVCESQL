@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/home.css}">
+    <title>HOME</title>
+</head>
+
+<body id="home" class="home">
+
+    <main>
+
+        <div class="opcoes">
+            <div>
+                <a href="/cliente/getAll">
+                    <div>
+                        <img th:src="@{/img/clientes.png}" alt="">
+                        <p>Clientes</p>
+                    </div>
+                </a>
+                <a href="/produto/getAll">
+                    <div>
+                        <img th:src="@{/img/produto.png}" alt="">
+                        <p>Produtos</p>
+                    </div>
+                </a>
+                <a href="/pedido/getAll">
+                    <div>
+                        <img th:src="@{/img/Consultar_pedido.png}" alt="">
+                        <p>Consultar Pedidos</p>
+                    </div>
+                </a>
+                <a href="/categoria/getAll">
+                    <div>
+                        <img th:src="@{/img/categoria.png}" alt="">
+                        <p>Categorias</p>
+                    </div>
+                </a>
+            </div>
+            <div>
+
+                <a href="/pedido/add">
+                    <div>
+                        <img th:src="@{/img/Gerar_pedido.png}" alt="">
+                        <p>Gerar pedido</p>
+
+                    </div>
+                </a>
+
+
+                <a href="/tipoUsuario/getAll">
+                    <div th:if="${usuario?.id_tipoUsuario} == 1">
+                        <img th:src="@{/img/Gerenciar_Permissoes.png}" alt="">
+                        <p>Gerenciar permissões</p>
+
+                    </div>
+                </a>
+                <a href="/usuario/getAll">
+
+                    <div th:if="${usuario?.id_tipoUsuario} == 1">
+                        <img th:src="@{/img/Usuario.png}" alt="">
+                        <p>Usuários</p>
+
+                    </div>
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+</body>
+
+</html>
